@@ -25,7 +25,7 @@ spec:
     - cat
     tty: true
   - name: node
-    image: node:10.14.1-alpine
+    image: node:16-alpine
     command:
     - cat
     tty: true
@@ -52,6 +52,17 @@ spec:
         pollSCM ('* * * * *')
     }
 	stages {
+		stage('Build React Application'){
+			steps {
+				container('node') {
+		    		sh """
+              npm install
+              npm run build --production
+              """
+	    		}
+
+			}
+		}
 		stage('Build Image and push'){
 			steps {
 				container('docker') {
