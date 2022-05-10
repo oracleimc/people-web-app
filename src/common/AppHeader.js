@@ -8,9 +8,6 @@ import { Layout, Menu, Icon } from 'antd';
 const Header = Layout.Header;
 
 class AppHeader extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     let menuItems;
