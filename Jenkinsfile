@@ -56,6 +56,8 @@ spec:
 			steps {
 				container('node') {
 		    		sh """
+              node --version
+              npm install npm -g
               npm install
               npm run build --production
               """
