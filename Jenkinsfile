@@ -52,6 +52,17 @@ spec:
         pollSCM ('* * * * *')
     }
 	stages {
+		stage('Build React Application'){
+			steps {
+				container('node') {
+		    		sh """
+              npm install
+              npm run build --production
+              """
+	    		}
+
+			}
+		}
 		stage('Build Image and push'){
 			steps {
 				container('docker') {
