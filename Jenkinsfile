@@ -1,8 +1,7 @@
 def project = 'people-service-web-app'
-def appName = 'alper-people-web-app'
-def tenancy='frxplqvlwvmz'
+def os_namespace='frxplqvlwvmz'
 def ocir='fra.ocir.io'
-def imageTag = "${ocir}/${tenancy}/oracleimc/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
+def imageTag = "${ocir}/${os_namespace}/oracleimc/${project}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
 
 pipeline {
 	  agent {
